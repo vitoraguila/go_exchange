@@ -1,24 +1,65 @@
-# README
+# GO Exchange - Vitor Hugo Águila Oliveira
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a currency converter through the use of an API
 
-Things you may want to cover:
 
-* Ruby version
+## Installation
 
-* System dependencies
+The first please install docker and docker-compose:
 
-* Configuration
+```bash
+https://www.docker.com/community-edition
+```
 
-* Database creation
+To run the application, first you need to clone the project to you machine by:
 
-* Database initialization
+```bash
+git clone git@github.com:vitorhao/go_exchange.git
+```
 
-* How to run the test suite
+Enter to the new directory created:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+cd go_exchange
+```
 
-* Deployment instructions
+Build the project with Docker
 
-* ...
+```bash
+docker-compose build
+```
+
+
+### Installing gems
+
+To install all the gems that application needs, run:
+
+```bash
+docker-compose run --rm app bundle install
+```
+
+### Running the app
+
+Run app in docker-compose:
+
+```bash
+docker-compose up
+```
+
+
+## Tests
+
+To run our tests, just run `rspec` command in application root directory.
+
+Controllers tests rspec:
+
+```bash
+docker-compose run --rm app bundle exec rspec spec/controllers
+```
+
+
+Features tests rspec:
+
+```bash
+docker-compose run --rm app bundle exec rspec spec/features
+```
